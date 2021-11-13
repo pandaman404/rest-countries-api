@@ -1,9 +1,18 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import Header from "../components/Header";
+import BackButton from "../components/BackButton";
 
 const NotFound = () => {
-  const value = useGlobalContext();
-  return <h1>404 page</h1>;
+  return (
+    <>
+      <Header />
+      <section className="wrapper notfound-container">
+        Not Found!
+        <BackButton />
+      </section>
+    </>
+  );
 };
 
 export default NotFound;

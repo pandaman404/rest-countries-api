@@ -56,6 +56,10 @@ button svg {
   width: 1.2rem;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   width: 100%;
   max-width: 79.875rem;
@@ -68,6 +72,22 @@ button svg {
   padding-left: 2rem;
   padding-right: 2rem;
   margin-bottom: 4rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound-container {
+  min-height: 80vh;
+  display: flex;
+  flex-flow: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
 .homepage-content {
