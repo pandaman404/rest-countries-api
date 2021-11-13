@@ -18,14 +18,4 @@
   ul {
     margin: 0 1.5625rem;
   }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    line-height: 1.75;
-
-    .li-title {
-      font-weight: map-get($map: $font-weights, $key: medium);
-    }
-  }
 }

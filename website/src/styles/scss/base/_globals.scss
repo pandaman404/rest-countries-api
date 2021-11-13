@@ -1,6 +1,5 @@
 body {
   font-family: "Nunito Sans", sans-serif;
-  font-size: $homepageItems;
   background-color: $lightModeBackground;
   color: $lightModeText;
 }
@@ -28,60 +27,45 @@ article {
   box-shadow: 0px 3px 5px 0px rgb(236, 236, 236);
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.75;
+
+  .li-title {
+    font-weight: map-get($map: $font-weights, $key: medium);
+  }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: $white;
+  color: $lightModeText;
+  font-size: $detailPage;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6875rem;
+  border-radius: 0.3rem;
+  box-shadow: 0px 0px 7px 1px #cacaca;
+
+  svg {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+}
+
 .wrapper {
   width: 100%;
   max-width: 79.875rem;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
-.homepage-content {
-  padding: 2rem 0rem;
-
-  @include breakpoint-up(medium) {
-    padding: 3.125rem 0rem;
-  }
-
-  .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 3rem) 1fr;
-    grid-gap: 2.5rem;
-
-    @include breakpoint-up(medium) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 3rem;
-
-      .search {
-        grid-column: 1 / span 2;
-      }
-
-      .cards-container {
-        grid-column: 1 / span 3;
-      }
-    }
-
-    @include breakpoint-up(large) {
-      grid-gap: 3.125rem;
-    }
-
-    .cards-container {
-      min-height: auto;
-      width: 100%;
-      margin: 0 auto;
-      display: flex;
-      gap: 2.5rem;
-      flex-flow: row wrap;
-      justify-content: center;
-      gap: 2.5rem;
-
-      @include breakpoint-up(medium) {
-        gap: 4%;
-      }
-
-      @include breakpoint-up(large) {
-        justify-content: start;
-      }
-    }
-  }
+.back {
+  height: 3rem;
+  min-width: 8.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 4rem;
 }

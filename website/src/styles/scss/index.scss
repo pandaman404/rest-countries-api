@@ -1,4 +1,5 @@
 @import "./abstracts/variables", "./abstracts/mixins";
 @import "./base/globals";
+@import "./pages/homepage", "./pages/detail";
 @import "./components/header", "./components/search", "./components/filters",
   "./components/card";
