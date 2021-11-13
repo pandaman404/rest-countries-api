@@ -1,0 +1,31 @@
+.card {
+  height: 21.0625rem;
+  width: 16.5625rem;
+  display: flex;
+  background-color: $white;
+  flex-flow: column;
+  gap: 1.5625rem;
+  justify-self: center;
+
+  &-img {
+    height: 10rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  h2,
+  ul {
+    margin: 0 1.5625rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.75;
+
+    .li-title {
+      font-weight: map-get($map: $font-weights, $key: medium);
+    }
+  }
+}

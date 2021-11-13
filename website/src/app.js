@@ -1,9 +1,17 @@
 import React from "react";
-import { useGlobalContext } from "./context";
+import { Homepage, Detail, NotFound } from "./pages";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
-  const value = useGlobalContext();
-  return <h1>{value}</h1>;
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

@@ -1,0 +1,87 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: $homepageItems;
+  background-color: $lightModeBackground;
+  color: $lightModeText;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  font-size: $detailPage;
+  font-weight: map-get($map: $font-weights, $key: bold);
+}
+
+h2 {
+  font-size: $titleCard;
+}
+
+input,
+select,
+article {
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 5px 0px rgb(236, 236, 236);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 79.875rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.homepage-content {
+  padding: 2rem 0rem;
+
+  @include breakpoint-up(medium) {
+    padding: 3.125rem 0rem;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 3rem) 1fr;
+    grid-gap: 2.5rem;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 3rem;
+
+      .search {
+        grid-column: 1 / span 2;
+      }
+
+      .cards-container {
+        grid-column: 1 / span 3;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      grid-gap: 3.125rem;
+    }
+
+    .cards-container {
+      min-height: auto;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      gap: 2.5rem;
+      flex-flow: row wrap;
+      justify-content: center;
+      gap: 2.5rem;
+
+      @include breakpoint-up(medium) {
+        gap: 4%;
+      }
+
+      @include breakpoint-up(large) {
+        justify-content: start;
+      }
+    }
+  }
+}
