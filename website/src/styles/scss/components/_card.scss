@@ -2,7 +2,7 @@
   height: 21.0625rem;
   width: 16.5625rem;
   display: flex;
-  background-color: $white;
+  background-color: var(--header-background);
   flex-flow: column;
   gap: 1.5625rem;
   justify-self: center;

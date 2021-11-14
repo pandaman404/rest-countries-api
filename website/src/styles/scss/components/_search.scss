@@ -11,16 +11,12 @@
     outline: none;
   }
 
-  input::placeholder {
-    color: $lightModeInput;
-  }
-
   svg {
     position: absolute;
     height: 1.5rem;
     width: 1.5rem;
     top: 25%;
     left: 2rem;
-    fill: $lightModeInput;
+    fill: var(--input-color);
   }
 }

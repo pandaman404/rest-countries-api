@@ -1,7 +1,7 @@
 body {
   font-family: "Nunito Sans", sans-serif;
-  background-color: $lightModeBackground;
-  color: $lightModeText;
+  background-color: var(--body-background);
+  color: var(--text-color);
 }
 
 *,
@@ -24,7 +24,7 @@ input,
 select,
 article {
   border-radius: 0.5rem;
-  box-shadow: 0px 3px 5px 0px rgb(236, 236, 236);
+  box-shadow: 0px 0px 5px 5px var(--shadow-color);
 }
 
 ul {
@@ -37,18 +37,27 @@ ul {
   }
 }
 
+input {
+  background-color: var(--header-background);
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: var(--input-color);
+}
+
 button {
   border: none;
   cursor: pointer;
-  background-color: $white;
-  color: $lightModeText;
+  background-color: var(--header-background);
+  color: var(--text-color);
   font-size: $detailPage;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.6875rem;
   border-radius: 0.3rem;
-  box-shadow: 0px 0px 7px 1px #cacaca;
+  box-shadow: 0px 0px 3px 3px var(--shadow-color);
 
   svg {
     height: 1.2rem;
