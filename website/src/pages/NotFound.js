@@ -1,5 +1,4 @@
 import React from "react";
-import { useGlobalContext } from "../context";
 import Header from "../components/Header";
 import BackButton from "../components/BackButton";
 

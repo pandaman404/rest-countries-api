@@ -6,6 +6,8 @@ import Filters from "../components/Filters";
 import Card from "../components/Card";
 
 const Homepage = () => {
+  const { countries, isLoading, error } = useGlobalContext();
+
   return (
     <>
       <Header />
@@ -14,11 +16,15 @@ const Homepage = () => {
           <Search />
           <Filters />
           <div className="cards-container">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {isLoading ? (
+              <div className="loading"></div>
+            ) : error.show ? (
+              <h2>{error.msg}</h2>
+            ) : (
+              countries.map((country) => {
+                return <Card key={country.name} {...country} />;
+              })
+            )}
           </div>
         </div>
       </main>
