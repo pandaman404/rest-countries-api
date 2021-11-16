@@ -8,7 +8,7 @@ import useFetch from "../useFetch";
 const Country = () => {
   const { code } = useParams();
 
-  const { isLoading, error, countries } = useFetch(`alpha/${code}`);
+  const { isLoading, error, countries: country } = useFetch(`alpha/${code}`);
 
   return (
     <>
@@ -23,42 +23,42 @@ const Country = () => {
             <BackButton />
             <div className="country">
               <img
-                src={countries.flags.svg}
-                alt={countries.name}
+                src={country.flags.svg}
+                alt={country.name}
                 className="country-img"
               />
               <div className="country-info">
-                <h2>{countries.name}</h2>
+                <h2>{country.name}</h2>
                 <ul className="info-1">
                   <li>
                     <span className="li-title">Native Name: </span>
-                    {countries.nativeName}
+                    {country.nativeName}
                   </li>
                   <li>
                     <span className="li-title">Population: </span>
-                    {countries.population}
+                    {country.population}
                   </li>
                   <li>
                     <span className="li-title">Region: </span>
-                    {countries.region}
+                    {country.region}
                   </li>
                   <li>
                     <span className="li-title">Sub Region: </span>
-                    {countries.subregion}
+                    {country.subregion}
                   </li>
                   <li>
                     <span className="li-title">Capital: </span>
-                    {countries.capital}
+                    {country.capital}
                   </li>
                 </ul>
                 <ul className="info-2">
                   <li>
                     <span className="li-title">Top Level Domain: </span>
-                    {countries.domain}
+                    {country.domain}
                   </li>
                   <li>
                     <span className="li-title">Currencies: </span>
-                    {countries.currencies.map((item, index) => {
+                    {country.currencies.map((item, index) => {
                       return (
                         <span key={index}>
                           {(index ? ", " : "") + item.name}
@@ -68,7 +68,7 @@ const Country = () => {
                   </li>
                   <li>
                     <span className="li-title">Languages: </span>
-                    {countries.languages.map((item, index) => {
+                    {country.languages.map((item, index) => {
                       return (
                         <span key={index}>
                           {(index ? ", " : "") + item.name}
@@ -80,9 +80,16 @@ const Country = () => {
                 <div className="border-countries">
                   <h3>Border Countries:</h3>
                   <div className="buttons-container">
-                    <button>Argentina</button>
-                    <button>Bolivia</button>
-                    <button>Peru</button>
+                    {country.borders.map((borderCountryCode) => {
+                      return (
+                        <Link
+                          key={borderCountryCode}
+                          to={`/countries/${borderCountryCode.toLowerCase()}`}
+                        >
+                          <button>{borderCountryCode}</button>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
