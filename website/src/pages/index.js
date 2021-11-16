@@ -1,5 +1,5 @@
 import Homepage from "./Homepage";
-import Detail from "./Detail";
+import Country from "./Country";
 import NotFound from "./NotFound";
 
-export { Homepage, Detail, NotFound };
+export { Homepage, Country, NotFound };

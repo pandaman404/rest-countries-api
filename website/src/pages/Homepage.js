@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Search from "../components/Search";
 import Filters from "../components/Filters";
 import Card from "../components/Card";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   const { countries, isLoading, error } = useGlobalContext();
@@ -22,7 +23,14 @@ const Homepage = () => {
               <h2>{error.msg}</h2>
             ) : (
               countries.map((country) => {
-                return <Card key={country.name} {...country} />;
+                return (
+                  <Link
+                    to={`/countries/${country.alpha3Code.toLowerCase()}`}
+                    key={country.alpha3Code}
+                  >
+                    <Card {...country} />
+                  </Link>
+                );
               })
             )}
           </div>

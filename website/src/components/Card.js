@@ -1,9 +1,9 @@
 import React from "react";
 
-const Card = ({ flag, name, population, region, capital }) => {
+const Card = ({ flags, name, population, region, capital }) => {
   return (
     <article className="card">
-      <img src={flag} alt={name} className="card-img" />
+      <img src={flags.svg} alt={name} className="card-img" />
       <h2>{name}</h2>
       <ul>
         <li>

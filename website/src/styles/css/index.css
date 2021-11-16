@@ -83,6 +83,7 @@ button svg {
 
 a {
   text-decoration: none;
+  color: var(--text-color);
 }
 
 .wrapper {

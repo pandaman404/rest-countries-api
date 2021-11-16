@@ -6,13 +6,12 @@ const Search = () => {
   const searchValue = useRef("");
   const { setQuery } = useGlobalContext();
 
-  const handleSearch = (e) => {
-    e.preventDefault();
+  const handleSearch = () => {
     setQuery(`name/${searchValue.current.value}`);
   };
 
   return (
-    <form className="search" onSubmit={handleSearch}>
+    <form className="search" onSubmit={(e) => e.preventDefault()}>
       <input
         type="text"
         placeholder="Search for a country..."
