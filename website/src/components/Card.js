@@ -7,7 +7,8 @@ const Card = ({ flags, name, population, region, capital }) => {
       <h2>{name}</h2>
       <ul>
         <li>
-          <span className="li-title">Population:</span> {population}
+          <span className="li-title">Population:</span>{" "}
+          {new Intl.NumberFormat("en-US").format(population)}
         </li>
         <li>
           <span className="li-title">Region:</span> {region}

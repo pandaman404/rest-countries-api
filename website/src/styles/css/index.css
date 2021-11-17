@@ -262,6 +262,13 @@ a {
   padding: 1.1rem 0;
 }
 
+.detail-content .wrapper .country-info .border-countries .buttons-container button .text-button {
+  width: 80%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .header {
   background-color: var(--header-background);
   box-shadow: 0px 1px 10px 5px var(--shadow-color);

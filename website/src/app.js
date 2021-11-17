@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/countries/:code" element={<Country />} />
+        <Route path="/country/:code" element={<Country />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

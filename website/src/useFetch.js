@@ -10,10 +10,17 @@ const useFetch = (query) => {
   const fetchData = async (url) => {
     setIsLoading(true);
     try {
-      const response = await fetch(url);
-      const data = await response.json();
+      let data = await fetch(url).then((response) => response.json());
       if (data.message) {
         setError({ show: true, msg: data.message });
+      }
+      if (data.borders) {
+        let bordersNames = await fetch(
+          `${API_ENDPOINT}alpha?codes=${data.borders.join(",")}`
+        ).then((response) => response.json());
+        bordersNames = bordersNames.map((item) => item.name);
+        setError({ show: false, msg: "" });
+        setCountries({ ...data, bordersNames });
       } else {
         setError({ show: false, msg: "" });
         setCountries(data);

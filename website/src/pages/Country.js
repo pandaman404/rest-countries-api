@@ -7,7 +7,6 @@ import useFetch from "../useFetch";
 
 const Country = () => {
   const { code } = useParams();
-
   const { isLoading, error, countries: country } = useFetch(`alpha/${code}`);
 
   return (
@@ -16,14 +15,17 @@ const Country = () => {
       {isLoading ? (
         <div className="loading"></div>
       ) : error.show ? (
-        <h2>{error.msg}</h2>
+        <section className="wrapper notfound-container">
+          Not Found!
+          <BackButton />
+        </section>
       ) : (
         <section className="detail-content">
           <div className="wrapper">
             <BackButton />
             <div className="country">
               <img
-                src={country.flags.svg}
+                src={country.flags ? country.flags.svg : null}
                 alt={country.name}
                 className="country-img"
               />
@@ -36,7 +38,7 @@ const Country = () => {
                   </li>
                   <li>
                     <span className="li-title">Population: </span>
-                    {country.population}
+                    {new Intl.NumberFormat("en-US").format(country.population)}
                   </li>
                   <li>
                     <span className="li-title">Region: </span>
@@ -80,16 +82,22 @@ const Country = () => {
                 <div className="border-countries">
                   <h3>Border Countries:</h3>
                   <div className="buttons-container">
-                    {country.borders.map((borderCountryCode) => {
-                      return (
-                        <Link
-                          key={borderCountryCode}
-                          to={`/countries/${borderCountryCode.toLowerCase()}`}
-                        >
-                          <button>{borderCountryCode}</button>
-                        </Link>
-                      );
-                    })}
+                    {country.borders
+                      ? country.bordersNames.map((item, index) => {
+                          return (
+                            <Link
+                              key={country.borders[index]}
+                              to={`/country/${country.borders[
+                                index
+                              ].toLowerCase()}`}
+                            >
+                              <button>
+                                <span className="text-button">{item}</span>
+                              </button>
+                            </Link>
+                          );
+                        })
+                      : null}
                   </div>
                 </div>
               </div>

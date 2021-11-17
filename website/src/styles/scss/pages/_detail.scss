@@ -67,6 +67,13 @@
               height: 2rem;
               width: 6.125rem;
               padding: 1.1rem 0;
+
+              .text-button {
+                width: 80%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+              }
             }
           }
         }

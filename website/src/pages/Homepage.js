@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 import Header from "../components/Header";
 import Search from "../components/Search";
@@ -25,7 +25,7 @@ const Homepage = () => {
               countries.map((country) => {
                 return (
                   <Link
-                    to={`/countries/${country.alpha3Code.toLowerCase()}`}
+                    to={`/country/${country.alpha3Code.toLowerCase()}`}
                     key={country.alpha3Code}
                   >
                     <Card {...country} />
