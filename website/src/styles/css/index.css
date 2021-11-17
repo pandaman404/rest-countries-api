@@ -130,6 +130,11 @@ a {
   font-size: 2rem;
 }
 
+.notfound-container .back {
+  width: auto;
+  padding: 2rem 3rem;
+}
+
 .homepage-content {
   padding: 2rem 1rem;
   font-size: 0.875rem;
