@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { MdSearch } from "react-icons/md";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../context/context";
 
 const Search = () => {
   const searchValue = useRef("");

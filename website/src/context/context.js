@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect, useCallback } from "react";
-import useFetch from "./useFetch";
+import React, { useContext, useState } from "react";
+import useFetch from "../hooks/useFetch";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {

@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import { useGlobalContext } from "../context";
+import React from "react";
 import Header from "../components/Header";
 import { useParams, Link } from "react-router-dom";
 import BackButton from "../components/BackButton";
-import useFetch from "../useFetch";
+import useFetch from "../hooks/useFetch";
 
 const Country = () => {
   const { code } = useParams();

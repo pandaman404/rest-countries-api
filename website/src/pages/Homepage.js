@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useGlobalContext } from "../context";
+import React from "react";
+import { useGlobalContext } from "../context/context";
 import Header from "../components/Header";
 import Search from "../components/Search";
 import Filters from "../components/Filters";

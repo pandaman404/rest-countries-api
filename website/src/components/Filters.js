@@ -1,6 +1,6 @@
 import React from "react";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../context/context";
 
 const Filters = () => {
   const { setQuery } = useGlobalContext();

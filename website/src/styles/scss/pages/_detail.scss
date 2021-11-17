@@ -18,8 +18,13 @@
       }
 
       &-img {
+        max-height: 20rem;
         width: 100%;
         max-width: 600px;
+
+        svg {
+          width: 100%;
+        }
 
         @include breakpoint-up(large) {
           max-width: 100%;

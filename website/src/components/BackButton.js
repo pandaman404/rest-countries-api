@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 
 const BackButton = () => {
   return (
-    <Link to="/">
-      <button className="back">
-        <BsArrowLeft /> Back
-      </button>
+    <Link to="/" className="back">
+      <BsArrowLeft /> Back
     </Link>
   );
 };
