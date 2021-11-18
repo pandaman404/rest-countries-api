@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router basename="/rest-countries-api">
+    <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/country/:code" element={<Country />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
